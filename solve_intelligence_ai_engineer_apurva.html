@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Apurva Chavan • AI Engineer for Solve Intelligence (S23)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg: #f3f4fb;
+      --bg-soft: #e5ebff;
+      --accent-1: #2563eb; /* blue */
+      --accent-2: #7c3aed; /* violet */
+      --accent-3: #f97316; /* orange */
+      --card: #ffffff;
+      --border: #d1d5db;
+      --text-main: #0f172a;
+      --text-soft: #4b5563;
+      --text-muted: #9ca3af;
+      --radius-xl: 26px;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 50px rgba(15, 23, 42, 0.08);
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --fast: 0.18s ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-main);
+      background:
+        radial-gradient(circle at 0 0, rgba(191, 219, 254, 0.85), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(221, 214, 254, 0.8), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(254, 243, 199, 0.9), transparent 55%),
+        var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 26px 16px 56px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-orb {
+      width: 56px;
+      height: 56px;
+      border-radius: 24px;
+      padding: 3px;
+      background: conic-gradient(from 140deg, #2563eb, #7c3aed, #f97316, #2563eb);
+      box-shadow: 0 18px 40px rgba(30, 64, 175, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-orb-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background: radial-gradient(circle at 30% 0, #1d4ed8, #020617 75%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      color: #e5e7eb;
+    }
+
+    .brand-text-top {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+    }
+
+    .brand-text-name {
+      font-size: 1.08rem;
+      font-weight: 600;
+    }
+
+    .brand-text-role {
+      font-size: 0.86rem;
+      color: var(--text-soft);
+    }
+
+    .brand-text-role span {
+      color: var(--accent-1);
+      font-weight: 500;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.8rem;
+    }
+
+    nav a {
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--text-soft);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: background var(--fast), border-color var(--fast), color var(--fast), transform var(--fast), box-shadow var(--fast);
+    }
+
+    nav a:hover {
+      background: #eff6ff;
+      border-color: var(--accent-1);
+      color: var(--accent-1);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 28px rgba(148, 163, 184, 0.55);
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.2fr);
+      gap: 18px;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-main {
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at 0 0, rgba(37, 99, 235, 0.12), transparent 70%),
+        radial-gradient(circle at 100% 100%, rgba(124, 58, 237, 0.12), transparent 70%),
+        #ffffff;
+      border: 1px solid rgba(191, 219, 254, 0.9);
+      box-shadow: var(--shadow-soft);
+      padding: 18px 18px 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.75rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-pill {
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      background: rgba(248, 250, 252, 0.9);
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .hero-pill.accent {
+      border-color: rgba(37, 99, 235, 0.9);
+      background: radial-gradient(circle at 0 0, rgba(37, 99, 235, 0.3), #ffffff);
+      color: #1e3a8a;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3vw, 2.3rem);
+      margin: 2px 0 8px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, #2563eb, #7c3aed, #f97316);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 700;
+    }
+
+    .hero-sub {
+      font-size: 0.96rem;
+      color: var(--text-soft);
+      max-width: 620px;
+    }
+
+    .hero-sub strong { color: var(--text-main); }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1.1fr);
+      gap: 10px;
+      margin-top: 14px;
+      font-size: 0.82rem;
+    }
+
+    @media (max-width: 720px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-col {
+      border-radius: 18px;
+      border: 1px solid rgba(209, 213, 219, 0.95);
+      background: rgba(248, 250, 252, 0.85);
+      padding: 9px 10px 8px;
+    }
+
+    .hero-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .hero-value {
+      font-size: 0.84rem;
+      color: var(--text-soft);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .hero-tag {
+      padding: 2px 8px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      background: #ffffff;
+    }
+
+    .hero-cta-row {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 8px 15px;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: background var(--fast), border-color var(--fast), color var(--fast), transform var(--fast), box-shadow var(--fast);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: #eff6ff;
+      border-color: rgba(37, 99, 235, 0.95);
+      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.45);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 56px rgba(37, 99, 235, 0.6);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: rgba(148, 163, 184, 0.9);
+      color: var(--text-soft);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-2);
+      color: var(--accent-2);
+      transform: translateY(-1px);
+    }
+
+    .hero-note {
+      color: var(--text-muted);
+    }
+
+    .hero-note span { color: var(--accent-3); }
+
+    /* Right hero: eval console */
+    .hero-side {
+      border-radius: var(--radius-xl);
+      background: rgba(15, 23, 42, 0.97);
+      border: 1px solid rgba(15, 23, 42, 0.9);
+      box-shadow: 0 22px 50px rgba(15, 23, 42, 0.6);
+      padding: 12px 13px 10px;
+      font-family: var(--font-mono);
+      font-size: 0.73rem;
+      color: #e5e7eb;
+    }
+
+    .hero-side-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .hero-side-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.7rem;
+      color: #9ca3af;
+    }
+
+    .hero-side-pill {
+      padding: 3px 9px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(96, 165, 250, 0.95);
+      background: rgba(15, 23, 42, 0.96);
+      font-size: 0.7rem;
+      color: #dbeafe;
+    }
+
+    .console {
+      border-radius: 18px;
+      border: 1px solid rgba(30, 64, 175, 0.95);
+      background: radial-gradient(circle at 0 0, rgba(37, 99, 235, 0.3), transparent 55%), #020617;
+      padding: 9px 10px 8px;
+    }
+
+    .console-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+      font-size: 0.7rem;
+      color: #9ca3af;
+    }
+
+    .console-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .console-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.8);
+    }
+
+    .console-body {
+      font-size: 0.72rem;
+      line-height: 1.55;
+      color: #e5e7eb;
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    .kw { color: #60a5fa; }
+    .fn { color: #a5b4fc; }
+    .str { color: #fbbf24; }
+    .num { color: #4ade80; }
+    .cm { color: #9ca3af; }
+
+    /* MAIN GRID */
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 960px) {
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    section {
+      border-radius: var(--radius-lg);
+      background: #ffffff;
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      box-shadow: var(--shadow-soft);
+      padding: 14px 16px 12px;
+    }
+
+    h2 {
+      font-size: 0.9rem;
+      margin: 0 0 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    h2 span {
+      width: 22px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #2563eb, #7c3aed, #f97316);
+    }
+
+    .section-body {
+      font-size: 0.88rem;
+      color: var(--text-soft);
+    }
+
+    .section-body strong { color: var(--text-main); }
+
+    .subheading {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-top: 8px;
+      margin-bottom: 4px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 6px;
+      font-size: 0.78rem;
+    }
+
+    .chip {
+      padding: 3px 9px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      background: #f9fafb;
+      color: var(--text-soft);
+    }
+
+    .chip.highlight {
+      border-color: rgba(37, 99, 235, 0.9);
+      color: #1e3a8a;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 4px 0 0;
+      font-size: 0.87rem;
+    }
+
+    .list li {
+      margin-bottom: 6px;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .list li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 0.72rem;
+      color: var(--accent-1);
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      font-size: 0.84rem;
+    }
+
+    .project {
+      border-radius: 17px;
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      background:
+        radial-gradient(circle at 0 0, rgba(191, 219, 254, 0.4), transparent 60%),
+        #ffffff;
+      padding: 9px 10px 9px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 720px) {
+      .project {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .project-title {
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 2px;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .project-title span {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+    }
+
+    .project-desc {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .project-tag {
+      padding: 2px 7px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      background: #f9fafb;
+      font-size: 0.74rem;
+      color: var(--text-soft);
+    }
+
+    .project-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 6px;
+      text-align: right;
+    }
+
+    .project-link {
+      padding: 5px 9px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(37, 99, 235, 0.95);
+      color: #1d4ed8;
+      background: #eff6ff;
+      font-size: 0.76rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background var(--fast), box-shadow var(--fast), border-color var(--fast), transform var(--fast);
+    }
+
+    .project-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(59, 130, 246, 0.45);
+      background: #dbeafe;
+      border-color: #1d4ed8;
+    }
+
+    .project-note {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* STACK */
+    .stack-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.8rem;
+    }
+
+    .stack-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      align-items: center;
+    }
+
+    .stack-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+    }
+
+    .stack-pill {
+      padding: 3px 9px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      background: #f9fafb;
+      color: var(--text-soft);
+    }
+
+    footer {
+      margin-top: 14px;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      text-align: right;
+    }
+
+    footer a {
+      color: var(--accent-1);
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-orb"><div class="brand-orb-inner">AC</div></div>
+        <div>
+          <div class="brand-text-top">Tailored application • Solve Intelligence (S23)</div>
+          <div class="brand-text-name">Apurva Chavan</div>
+          <div class="brand-text-role">AI Engineer • <span>LLM algorithms, eval pipelines & legal AI</span></div>
+        </div>
+      </div>
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#fit">How I match</a>
+        <a href="#projects">Relevant work</a>
+        <a href="#stack">Stack</a>
+        <a href="https://github.com/Apurva1205" target="_blank" rel="noopener">GitHub ↗</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="overview">
+      <div class="hero-main">
+        <div class="hero-pill-row">
+          <div class="hero-pill accent">AI Engineer</div>
+          <div class="hero-pill">LLM algorithms • Evaluation pipelines</div>
+          <div class="hero-pill">Python • Postgres • Fast shipping</div>
+        </div>
+        <h1 class="hero-title">
+          Building and evaluating <span>production‑ready LLM systems</span> for patent & IP workflows.
+        </h1>
+        <p class="hero-sub">
+          I’m a <strong>Python‑first AI engineer</strong> who loves turning messy problems into
+          <strong>clean algorithms, robust evaluation pipelines, and real customer impact</strong>. I thrive in
+          <strong>lean, fast‑moving teams</strong> where we ship quickly, measure rigorously, and iterate based on
+          what users actually need.
+        </p>
+        <div class="hero-grid">
+          <div class="hero-col">
+            <div class="hero-label">Why Solve Intelligence clicks for me</div>
+            <div class="hero-value">
+              You’re not just demoing prompts—you’re <strong>shipping proprietary algorithms</strong> that help
+              IP teams work 50–90% faster. I want to help push that frontier with
+              <strong>state‑of‑the‑art prompting, eval, and model tuning</strong>.
+            </div>
+            <div class="hero-tags">
+              <span class="hero-tag">Real paying users</span>
+              <span class="hero-tag">High‑signal domain (patents)</span>
+              <span class="hero-tag">Rock‑star core team</span>
+            </div>
+          </div>
+          <div class="hero-col">
+            <div class="hero-label">How I like to work</div>
+            <div class="hero-value">
+              <strong>Ship fast, measure everything</strong>: small, well‑scoped experiments, strong baselines,
+              and transparent metrics so we know when an algorithm genuinely moves the needle.
+            </div>
+            <div class="hero-tags">
+              <span class="hero-tag">LLM eval mindset</span>
+              <span class="hero-tag">Prompt engineering</span>
+              <span class="hero-tag">Customer‑centric iterations</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-cta-row">
+          <a href="#fit" class="btn btn-primary">See how my experience maps to this role →</a>
+          <a href="#projects" class="btn btn-secondary">Jump to LLM & pipeline projects</a>
+          <div class="hero-note">Core interest: <span>designing eval‑first LLM systems, not just prompts.</span></div>
+        </div>
+      </div>
+
+      <aside class="hero-side">
+        <div class="hero-side-header">
+          <div class="hero-side-label">Eval console • Prompt variants for patent drafting</div>
+          <div class="hero-side-pill">python • postgres • llm eval</div>
+        </div>
+        <div class="console">
+          <div class="console-header">
+            <div class="console-dots">
+              <div class="console-dot"></div>
+              <div class="console-dot"></div>
+              <div class="console-dot"></div>
+            </div>
+            <div>eval_run_id = <span style="color:#bfdbfe;">"claims_v7"</span></div>
+          </div>
+          <div class="console-body">
+<span class="cm"># offline batch eval on real patent pairs</span>
+<span class="kw">from</span> solve_eval <span class="kw">import</span> <span class="fn">run_eval</span>
+
+cfg = {
+  <span class="str">"prompt_version"</span>: <span class="str">"claims_v7_structured"</span>,
+  <span class="str">"metric_weights"</span>: {<span class="str">"novelty"</span>: <span class="num">0.4</span>, <span class="str">"clarity"</span>: <span class="num">0.3</span>, <span class="str">"coverage"</span>: <span class="num">0.3</span>},
+}
+
+results = <span class="fn">run_eval</span>(
+  dataset_id=<span class="str">"ee-telecom-2024Q3"</span>,
+  cfg=cfg,
+  baseline=<span class="str">"claims_v6_freeform"</span>,
+)
+
+<span class="fn">print_report</span>(results)
+<span class="cm"># → v7: +12.4% overall vs v6, biggest gains in clarity
+# next step: push to staging, gather attorney feedback in‑product</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <main>
+      <div>
+        <section id="fit">
+          <h2><span></span> How I match the AI Engineer role</h2>
+          <div class="section-body">
+            <div class="subheading">Production‑ready AI algorithms & pipelines</div>
+            <ul class="list">
+              <li>
+                Built <strong>end‑to‑end ML pipelines</strong> where models are just one part of the system:
+                data ingestion, preprocessing, model training, evaluation, and reporting.
+              </li>
+              <li>
+                Experience thinking beyond “does this run?” to
+                <strong>“is this robust, measurable, and worth shipping?”</strong>.
+              </li>
+              <li>
+                Comfortable turning research ideas into <strong>config‑driven, testable components</strong> that can
+                live in production.
+              </li>
+            </ul>
+
+            <div class="subheading">LLMs, prompt engineering & evaluation</div>
+            <ul class="list">
+              <li>
+                Hands‑on experience with <strong>LLM‑driven applications</strong> (ranking, matching, generation),
+                and designing prompts that are <strong>structured, debuggable, and eval‑friendly</strong>.
+              </li>
+              <li>
+                Built workflows that compare <strong>prompt/model variants</strong> on curated datasets with
+                quantitative and qualitative feedback.
+              </li>
+              <li>
+                Strong bias toward <strong>offline eval + targeted manual review</strong> before a change touches users.
+              </li>
+            </ul>
+
+            <div class="subheading">Python expert with backend instincts</div>
+            <ul class="list">
+              <li>
+                Python is my primary language; my GitHub showcases projects in
+                <strong>ML, NLP, time series, and backend scripting</strong>.
+              </li>
+              <li>
+                Comfortable designing and working with <strong>relational schemas</strong> (Postgres‑style), writing
+                queries to support eval dashboards, logging, and analytics.
+              </li>
+              <li>
+                Familiar with <strong>web backends and REST APIs</strong> to expose models and eval endpoints.
+              </li>
+            </ul>
+
+            <div class="subheading">Front‑end awareness & communication</div>
+            <ul class="list">
+              <li>
+                Experience collaborating on projects where <strong>React/TypeScript front‑ends</strong> consume ML
+                outputs; I design APIs and data contracts that make UI integration easy.
+              </li>
+              <li>
+                Clear, structured communicator—used to documenting experiments, writing explainers, and keeping
+                teammates aligned.
+              </li>
+            </ul>
+
+            <div class="chips">
+              <div class="chip highlight">Python‑first engineer</div>
+              <div class="chip">LLM & prompt engineering</div>
+              <div class="chip">Evaluation pipelines</div>
+              <div class="chip">Back‑end & data mindset</div>
+              <div class="chip">Fast, iterative shipping</div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2><span></span> How I would contribute at Solve Intelligence</h2>
+          <div class="section-body">
+            <div class="subheading">1. Deep‑dive into your current algorithms & users</div>
+            <ul class="list">
+              <li>
+                Understand the <strong>current prompting strategies, proprietary algorithms, and failure modes</strong>
+                for different user segments (large firms vs boutiques vs solo practitioners).
+              </li>
+              <li>
+                Map out where <strong>evaluation is strong vs. where we rely on intuition</strong>, then tighten those
+                gaps with better metrics and datasets.
+              </li>
+            </ul>
+
+            <div class="subheading">2. Build and extend the evaluation pipeline</div>
+            <ul class="list">
+              <li>
+                Co‑design an <strong>eval framework</strong> (in the spirit of OpenAI evals but tailored to patents):
+                datasets, tasks, metrics, and reporting.
+              </li>
+              <li>
+                Make it trivial to <strong>spin up experiments</strong>: new prompt versions, model choices, or
+                algorithm tweaks should be one config change away.
+              </li>
+              <li>
+                Surface results in <strong>simple dashboards / tables</strong> that the whole team (including attorneys)
+                can read and debate.
+              </li>
+            </ul>
+
+            <div class="subheading">3. Ship better algorithms, not just better prompts</div>
+            <ul class="list">
+              <li>
+                Combine <strong>prompt engineering, retrieval, and post‑processing</strong> to maximize objective
+                quality: structure, coverage, novelty, and style constraints.
+              </li>
+              <li>
+                Use eval results and user feedback to <strong>iteratively harden algorithms</strong> for specific
+                practice areas (e.g., telecom, med‑tech, fintech).
+              </li>
+            </ul>
+
+            <div class="subheading">4. Be a multiplier for the team</div>
+            <ul class="list">
+              <li>
+                Share <strong>clear write‑ups</strong> on what worked, what didn’t, and how we decided—so new hires
+                ramp faster and experiments don’t repeat.
+              </li>
+              <li>
+                Pair with engineers, researchers, and attorneys to ensure the system reflects both
+                <strong>ML best practices</strong> and <strong>real legal needs</strong>.
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <aside>
+        <section id="projects">
+          <h2><span></span> Relevant projects & experience</h2>
+          <div class="section-body">
+            <p style="margin-top:0;margin-bottom:6px;">
+              A few public projects from <code style="font-family:var(--font-mono);">Apurva1205</code> that highlight my
+              <strong>LLM, evaluation, and backend</strong> mindset.
+            </p>
+            <div class="projects-grid">
+              <article class="project">
+                <div>
+                  <div class="project-title">AI-RESUME-ENHANCER <span>(LLM pipeline & ranking)</span></div>
+                  <p class="project-desc">
+                    Built an AI system to analyse resumes vs job descriptions, highlight gaps, and recommend changes.
+                    Involved <strong>prompting, scoring, and comparison logic</strong>—very similar to designing
+                    evaluation loops for LLM outputs.
+                  </p>
+                  <div class="project-tags">
+                    <span class="project-tag">LLM workflows</span>
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Evaluation mindset</span>
+                  </div>
+                </div>
+                <div class="project-actions">
+                  <a class="project-link" href="https://github.com/Apurva1205/AI-RESUME-ENHANCER" target="_blank" rel="noopener">View repo ↗</a>
+                  <div class="project-note">Shows end‑to‑end LLM + scoring pipeline.</div>
+                </div>
+              </article>
+
+              <article class="project">
+                <div>
+                  <div class="project-title">LLM-Assessment-Final-Test <span>(LLM experimentation)</span></div>
+                  <p class="project-desc">
+                    Notebook‑driven experiments with LLM prompts and tasks, focused on
+                    <strong>understanding failure modes and evaluation</strong> instead of treating the model as a black box.
+                  </p>
+                  <div class="project-tags">
+                    <span class="project-tag">Prompt engineering</span>
+                    <span class="project-tag">Evaluation runs</span>
+                  </div>
+                </div>
+                <div class="project-actions">
+                  <a class="project-link" href="https://github.com/Apurva1205/LLM-Assessment-Final-Test" target="_blank" rel="noopener">View repo ↗</a>
+                  <div class="project-note">Evidence of thoughtful LLM experimentation.</div>
+                </div>
+              </article>
+
+              <article class="project">
+                <div>
+                  <div class="project-title">News-Category-Classification <span>(NLP & labeling)</span></div>
+                  <p class="project-desc">
+                    Built a text classification model for news articles. Reinforces my understanding of
+                    <strong>language representations, label design, and evaluation metrics</strong>—useful foundations
+                    for patent‑style tasks.
+                  </p>
+                  <div class="project-tags">
+                    <span class="project-tag">NLP</span>
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Evaluation</span>
+                  </div>
+                </div>
+                <div class="project-actions">
+                  <a class="project-link" href="https://github.com/Apurva1205/News-Category-Classification" target="_blank" rel="noopener">View repo ↗</a>
+                  <div class="project-note">Shows text‑heavy ML thinking.</div>
+                </div>
+              </article>
+
+              <article class="project">
+                <div>
+                  <div class="project-title">Tokenizers & Text-Classification <span>(PL + infra skills)</span></div>
+                  <p class="project-desc">
+                    Projects around <strong>tokenization, text models, and PyTorch pipelines</strong>—demonstrating
+                    comfort with the building blocks behind LLM‑driven systems.
+                  </p>
+                  <div class="project-tags">
+                    <span class="project-tag">PyTorch</span>
+                    <span class="project-tag">NLP internals</span>
+                    <span class="project-tag">Research‑style work</span>
+                  </div>
+                </div>
+                <div class="project-actions">
+                  <a class="project-link" href="https://github.com/Apurva1205/Tokenizers" target="_blank" rel="noopener">Tokenizers ↗</a>
+                  <a class="project-link" href="https://github.com/Apurva1205/Text-Classification" target="_blank" rel="noopener">Text‑Classification ↗</a>
+                  <div class="project-note">Evidence I can go below the API layer when needed.</div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="stack">
+          <h2><span></span> Stack & strengths</h2>
+          <div class="section-body">
+            <p style="margin-top:0;">
+              I’m excited about joining a <strong>talent‑dense, fast‑moving team</strong> and helping Solve Intelligence
+              push the boundary of AI for IP.
+            </p>
+            <div class="stack-rows">
+              <div class="stack-row">
+                <span class="stack-label">Core</span>
+                <span class="stack-pill">Python (expert)</span>
+                <span class="stack-pill">ML & NLP</span>
+                <span class="stack-pill">PyTorch / NumPy</span>
+              </div>
+              <div class="stack-row">
+                <span class="stack-label">Data</span>
+                <span class="stack-pill">Relational thinking (Postgres‑style)</span>
+                <span class="stack-pill">Eval datasets</span>
+                <span class="stack-pill">Logging & analytics</span>
+              </div>
+              <div class="stack-row">
+                <span class="stack-label">LLM</span>
+                <span class="stack-pill">Prompt design</span>
+                <span class="stack-pill">Offline & online eval</span>
+                <span class="stack-pill">Result analysis & iteration</span>
+              </div>
+              <div class="stack-row">
+                <span class="stack-label">Mindset</span>
+                <span class="stack-pill">Ship fast, measure, iterate</span>
+                <span class="stack-pill">Clear written communication</span>
+                <span class="stack-pill">Ownership & resilience</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <footer>
+      Crafted by Apurva Chavan for the <strong>AI Engineer</strong> role at Solve Intelligence (S23). GitHub:
+      <a href="https://github.com/Apurva1205" target="_blank" rel="noopener">Apurva1205</a>
+    </footer>
+  </div>
+</body>
+</html>
